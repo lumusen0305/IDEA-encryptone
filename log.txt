@@ -1,0 +1,116 @@
+Command: vcs -full64 -cpp g++-4.4 -cc gcc-4.4 -LDFLAGS -Wl,-no-as-needed ./encrypt_tb.v \
+./round.v ./encrypt.v +v2k -debug_all -R -l log.txt +lint=PCWM
+*** Using c compiler gcc-4.4 instead of cc ...
+                         Chronologic VCS (TM)
+       Version O-2018.09-SP2_Full64 -- Sat May 20 11:23:49 2023
+               Copyright (c) 1991-2018 by Synopsys Inc.
+                         ALL RIGHTS RESERVED
+
+This program is proprietary and confidential information of Synopsys Inc.
+and may be used and disclosed only as authorized in a license agreement
+controlling such use and disclosure.
+
+
+Warning-[DEBUG_DEP] Option will be deprecated
+  The option '-debug_all' will be deprecated in a future release.  Please use 
+  '-debug_acc+all -debug_region+cell+encrypt' instead.
+
+Parsing design file './encrypt_tb.v'
+Parsing design file './round.v'
+Parsing design file './encrypt.v'
+Top Level Modules:
+       encrypt_tb
+TimeScale is 1 ns / 100 ps
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 9
+encrypt, "round r0( .in (in),  .key (key[((7 * 16) + 15):(2 * 16)]),  .out (round1));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 12
+encrypt, "round r1( .in (round1),  .key ({key[((1 * 16) + 15):(0 * 16)], key2[((7 * 16) + 15):(4 * 16)]}),  .out (round2));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 14
+encrypt, "round r2( .in (round2),  .key ({key2[((3 * 16) + 15):(0 * 16)], key3[((7 * 16) + 15):(6 * 16)]}),  .out (round3));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 16
+encrypt, "round r3( .in (round3),  .key (key3[((5 * 16) + 15):(0 * 16)]),  .out (round4));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 21
+encrypt, "round r4( .in (round4),  .key (key4[((7 * 16) + 15):(2 * 16)]),  .out (round5));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 24
+encrypt, "round r5( .in (round5),  .key ({key4[((1 * 16) + 15):(0 * 16)], key5[((7 * 16) + 15):(4 * 16)]}),  .out (round6));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 27
+encrypt, "round r6( .in (round6),  .key ({key5[((3 * 16) + 15):(0 * 16)], key6[((7 * 16) + 15):(6 * 16)]}),  .out (round7));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+
+Warning-[TFIPC] Too few instance port connections
+./encrypt.v, 30
+encrypt, "round r7( .in (round7),  .key (key6[((5 * 16) + 15):(0 * 16)]),  .out (round8));"
+  The above instance has fewer port connections than the module definition.
+  Please use '+lint=TFIPC-L' to print out detailed information of unconnected 
+  ports.
+
+Starting vcs inline pass...
+2 modules and 0 UDP read.
+recompiling module encrypt_tb
+recompiling module round
+Both modules done.
+rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod -x ../simv; fi
+g++-4.4  -o ../simv    -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
+-Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -Wl,-no-as-needed -rdynamic  -Wl,-rpath=/home/synopsys/vcs/O-2018.09-SP2/linux64/lib \
+-L/home/synopsys/vcs/O-2018.09-SP2/linux64/lib   objs/amcQw_d.o  _48556_archive_1.so \
+SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lzerosoft_rt_stubs -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile \
+-luclinative /home/synopsys/vcs/O-2018.09-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
+-lvcsucli -Wl,-no-whole-archive          /home/synopsys/vcs/O-2018.09-SP2/linux64/lib/vcs_save_restore_new.o \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+Command: /home/user/Documents/Code/Verilog/加密/IDEA/Verilog/./simv +v2k -a log.txt +lint=PCWM
+Chronologic VCS simulator copyright 1991-2018
+Contains Synopsys proprietary information.
+Compiler version O-2018.09-SP2_Full64; Runtime version O-2018.09-SP2_Full64;  May 20 11:23 2023
+in      is 0000000000000000000000000000000000000000000000000000000000000011
+output1 is 1100011011011110110110110111000011100101000101101101111111000101
+$finish called from file "./encrypt_tb.v", line 24.
+$finish at simulation time                 4100
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 410000 ps
+CPU Time:      0.110 seconds;       Data structure size:   0.0Mb
+Sat May 20 11:23:50 2023
+CPU time: .205 seconds to compile + .141 seconds to elab + .125 seconds to link + .151 seconds in simulation
