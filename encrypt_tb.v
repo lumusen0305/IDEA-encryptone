@@ -3,7 +3,6 @@ module encrypt_tb;
 reg [63:0] in;
 reg [127:0] key;
 wire [63:0] out1;
-// wire [63:0] out2;
 
 encrypt enc(
 .in(in),
@@ -19,13 +18,11 @@ initial begin
     #100
     $display("in      is %b",in);
     $display("output1 is %b",out1);
-    // $display("output2 is %b",out2);
     #300
     $finish;
 end
 endmodule
 
-// 0000000000000000001000110110001111110100000001000000000000000000
 // `timescale 1ns/100ps
 // module encrypt_tb;
 // reg [63:0] in;
